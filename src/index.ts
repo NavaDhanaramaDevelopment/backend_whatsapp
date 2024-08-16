@@ -7,9 +7,10 @@ import cors from 'cors';
 
 const app = express();
 const server = http.createServer(app);
+const allowedOrigins = ['https://frontend-whatsapp-tau.vercel.app', 'http://localhost:3000'];
 const io = new Server(server, {
   cors: {
-    origin: 'https://frontend-whatsapp-tau.vercel.app/', // Replace with your React app's URL
+    origin: allowedOrigins, // Replace with your React app's URL
     methods: ['GET', 'POST']
   }
 });
@@ -18,7 +19,7 @@ const port = 3099;
 // Middleware for parsing JSON and handling CORS
 app.use(express.json());
 app.use(cors({
-  origin: 'https://frontend-whatsapp-tau.vercel.app/' // Replace with your React app's URL
+  origin: allowedOrigins // Replace with your React app's URL
 }));
 
 let isLoggedIn = false; // State to track login status
