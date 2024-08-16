@@ -36,7 +36,7 @@ const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
 const io = new socket_io_1.Server(server, {
     cors: {
-        origin: 'http://localhost:3000', // Replace with your React app's URL
+        origin: 'https://frontend-whatsapp-tau.vercel.app/', // Replace with your React app's URL
         methods: ['GET', 'POST']
     }
 });
@@ -44,7 +44,7 @@ const port = 3099;
 // Middleware for parsing JSON and handling CORS
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: 'http://localhost:3000' // Replace with your React app's URL
+    origin: 'https://frontend-whatsapp-tau.vercel.app/' // Replace with your React app's URL
 }));
 let isLoggedIn = false; // State to track login status
 // Initialize WhatsApp Client
