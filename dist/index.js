@@ -96,7 +96,8 @@ app.post('/send-message', async (req, res) => {
         return res.status(400).send({ error: 'Number and message are required' });
     }
     try {
-        const chatId = `${number}@c.us`; // Format phone number to chat ID
+        const formattedNumber = number.startsWith('0') ? `62${number.slice(1)}` : number;
+        const chatId = `${formattedNumber}@s.whatsapp.net`;
         await client.sendMessage(chatId, message);
         res.status(200).send({ success: true, message: 'Message sent successfully' });
     }
@@ -111,7 +112,8 @@ app.post('/send-otp', async (req, res) => {
         return res.status(400).send({ error: 'Number and OTP are required' });
     }
     try {
-        const chatId = `${number}@c.us`; // WhatsApp format for number
+        const formattedNumber = number.startsWith('0') ? `62${number.slice(1)}` : number;
+        const chatId = `${formattedNumber}@s.whatsapp.net`;
         await client.sendMessage(chatId, `Your OTP code is: ${otp}`);
         res.status(200).json({ message: 'OTP sent successfully', otp });
     }
