@@ -34,7 +34,7 @@ const qrcode = __importStar(require("qrcode-terminal"));
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
-const allowedOrigins = ['https://frontend-whatsapp-icongrosir.vercel.app/', 'http://localhost:3000'];
+const allowedOrigins = ['https://frontend-whatsapp-icongrosir.vercel.app', 'http://localhost:3000'];
 const io = new socket_io_1.Server(server, {
     cors: {
         origin: allowedOrigins, // Replace with your React app's URL

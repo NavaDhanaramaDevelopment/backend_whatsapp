@@ -7,7 +7,7 @@ import cors from 'cors';
 
 const app = express();
 const server = http.createServer(app);
-const allowedOrigins = ['https://frontend-whatsapp-icongrosir.vercel.app/', 'http://localhost:3000'];
+const allowedOrigins = ['https://frontend-whatsapp-icongrosir.vercel.app', 'http://localhost:3000'];
 const io = new Server(server, {
   cors: {
     origin: allowedOrigins, // Replace with your React app's URL
