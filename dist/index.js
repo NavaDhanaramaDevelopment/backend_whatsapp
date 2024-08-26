@@ -50,6 +50,7 @@ app.use((0, cors_1.default)({
 let isLoggedIn = false; // State to track login status
 // Initialize WhatsApp Client
 const client = new whatsapp_web_js_1.Client({
+    webVersionCache: { type: 'none' },
     authStrategy: new whatsapp_web_js_1.LocalAuth({
         clientId: 'client-one',
         dataPath: './.wwebjs_auth/session'

@@ -26,6 +26,7 @@ let isLoggedIn = false; // State to track login status
 
 // Initialize WhatsApp Client
 const client = new Client({
+  webVersionCache: { type: 'none' },
   authStrategy: new LocalAuth({
     clientId: 'client-one',
     dataPath: './.wwebjs_auth/session'
